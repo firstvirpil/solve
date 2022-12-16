@@ -10,6 +10,7 @@ def test_equal():
     assert 1 == 1
 
 
+
 def test_getting_post():
     r = requests.get(url=SERVICE_URL)
     response = Response(r)
