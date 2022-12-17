@@ -7,7 +7,7 @@ class Response:
 
     def __init__(self, response):
         self.response = response
-        self.response_json_data = response.json().get('data')
+        self.response_json = response.json().get('data')
         self.response_status = response.status_code
 
     def validate(self, schema):
