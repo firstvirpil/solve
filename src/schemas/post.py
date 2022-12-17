@@ -4,7 +4,7 @@ POST_SCHEMA = {
         "id": {"type": "number"},
         "title": {"type": "string"}
     },
-    "required": ["id"]
+    "required": ["id"]  # обязательный параметр
 }
 
 

@@ -11,6 +11,9 @@ class Response:
         self.response_status = response.status_code
 
     def validate(self, schema):
+        """
+        Тест через jsonschema
+        """
         if isinstance(self.response_json, list):
             for item in self.response_json:
                 validate(item, schema)
