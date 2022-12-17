@@ -6,7 +6,7 @@ from pydantic import BaseModel, validator, Field
 
 
 class Post(BaseModel):
-    id: int # = Field(le=3)
+    id: int # = Field(le=3) это можно раскоментить и закоментить все что после @validator
     title: str
 #    name: str = Field(alias="_name")
 
