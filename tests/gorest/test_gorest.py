@@ -21,6 +21,7 @@ def test_getting_user_fu(get_data, calculate):  # тоже что и первы�
     print(calculate)
     print(calculate(1, 2))
 
+
 def test_getting_user_make(get_data, make_number):  # тоже что и первый но с фикстурой
     Response(get_data).assert_status_code(200).validate(User)
     print(make_number)

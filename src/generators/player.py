@@ -5,7 +5,12 @@ from src.generators.player_localization import PlayerLocalization
 class Player:
 
     def __init__(self):
-        self.result = {}
+        self.result = {
+            "localize": {
+                "en": PlayerLocalization('en_US'),
+                "ru": PlayerLocalization("ru_RU")
+            }
+        }
         self.reset()
 
     def set_status(self, status=Statuses.active.value):
@@ -25,8 +30,12 @@ class Player:
         self.set_avatar()
         self.result["localize"] = {
             "en": PlayerLocalization('en_US').build(),
-            "ru": PlayerLocalization("ru_RU").build()
+            "ru": PlayerLocalization('ru_RU').build()
         }
+        return self
+
+    def update_inner_generator(self, key, generator):
+        self.result[key] = generator.build()
         return self
 
     def build(self):
@@ -34,5 +43,7 @@ class Player:
 
 
 # дефолтное создание z = Player().build()
-z = Player().set_balance(20).set_status("lost").build()
-print(z)
+#z = Player().set_balance(20).set_status("lost").build()
+#z = Player().set_balance(20).build()
+
+#print(z)
